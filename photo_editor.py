@@ -13,8 +13,8 @@ def rotate(value,image,copy):
 def crop(value,image,copy):
 	
 	crop_image = image.crop(value)
-	crop_image.show()
 	crop_image.save(f'{copy}')
+	crop_image.show()
 
 
 def text(input_text,image,font,colour,copy):
