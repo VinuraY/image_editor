@@ -17,7 +17,7 @@ def crop(value,image,copy):
 	crop_image.save(f'{copy}')
 
 
-def text(input_text,image,font,size,colour,copy):
+def text(input_text,image,font,colour,copy):
 	
 	type_text = ImageDraw.Draw(image)
 	type_text.text((0,0), input_text, font = font, fill = colour)
@@ -194,13 +194,14 @@ def main(image,copy):
 		input_text = input('Type here : ')
 		font = input('Location of the font : ') # Location C:\Windows\Fonts\Font name folder\Font.tff
 		size = int(input('Size of the text : '))
+		font = ImageFont.truetype(font, size)
 		colour = [1,2,3]
 
 		for i in range(0,3):
 			colour[i] = int(input(f'Colour (RGB value {i + 1}) : '))
 		
 		colour = tuple(colour)
-		text(input_text, image, font, size, colour, copy)
+		text(input_text, image, font, colour, copy)
 
 	
 	elif(select == 4):
